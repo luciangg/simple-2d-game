@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - BadItem
+  - GoodItem
+  - LifeItem
+  - GameControl
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Brackground
+    uniqueID: 2095778211
+    locked: 0
+  - name: Environment
+    uniqueID: 3982746939
+    locked: 0
+  - name: Items
+    uniqueID: 2321997349
+    locked: 0
+  - name: Player
+    uniqueID: 3058370771
+    locked: 0
+  - name: Details
+    uniqueID: 2948735779
+    locked: 0
