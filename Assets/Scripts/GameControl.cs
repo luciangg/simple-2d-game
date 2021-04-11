@@ -6,9 +6,8 @@ using UnityEngine.UI;
 public class GameControl : MonoBehaviour
 {
 	[Header("UI Elements")]
-	public Text scoreText;	
+	public Values uiValues;	
 	public int score = 0;
-	public Text livesText;
 	public int lives = 3;
 	public GameOverPanel gameOverPanel;
 	
@@ -21,17 +20,58 @@ public class GameControl : MonoBehaviour
 	private GameObject playerInstance;
 	
 	private LevelController currentLevel;
+	private ItemRespawn itemRespawn;
+	
+	struct ScoreData {
+		public float lastTime;
+		public float timeToNewPoint;
+		public float lastDifficultyIncrease;
+		public int points;
+		
+		public ScoreData(float lastTime, float lastDifficultyIncrease, float timeToNewPoint, int points)
+		{
+			this.lastTime = lastTime;
+			this.timeToNewPoint = timeToNewPoint;
+			this.lastDifficultyIncrease = lastDifficultyIncrease;
+			this.points = points;
+		}
+	}
+	private ScoreData scoreData; 
+	
+	void Awake () {
+		#if UNITY_EDITOR
+			QualitySettings.vSyncCount = 0;  // VSync must be disabled
+			Application.targetFrameRate = 45;
+		#endif
+	}
 	
     void Start()
     {
+		scoreData = new ScoreData(Time.time, Time.time, 1f, 10);
+		
 		PauseGame();
 		// CreatePlayer();
-        InvokeRepeating("AddPointsByTime", 1f, 1f);
+        // InvokeRepeating("AddPointsByTime", 1f, 1f);
 		
 		GameObject level = Instantiate(grid, gridParent);
 		currentLevel = level.GetComponent<LevelController>();
+		itemRespawn = gameObject.GetComponent<ItemRespawn>();
 		Restart();
-    }	
+    }
+	void Update()
+	{
+		if(Time.time > scoreData.lastTime + scoreData.timeToNewPoint)
+		{
+			scoreData.lastTime = Time.time;
+			AddPoints(scoreData.points);
+		}
+		if(Time.time > scoreData.lastDifficultyIncrease + 15f)
+		{
+			scoreData.lastDifficultyIncrease = Time.time;
+			scoreData.points += 5;
+			itemRespawn.IncreaseBadRespawnTime(-0.01f);			
+		}			
+	}
 	
 	void AddPointsByTime()
 	{
@@ -59,14 +99,16 @@ public class GameControl : MonoBehaviour
 	{
 		score += points;
 		score = (score < 0) ? 0 : score;
-		scoreText.text = "Score: " + score.ToString();
+		// scoreText.text = "Score: " + score.ToString();
+		uiValues.setScore(score);
 	}
 	
 	public bool AddLives(int life)
 	{
 		lives += life;
 		lives = (lives > 3) ? 3 : lives;		
-		livesText.text = "Lives: " + lives.ToString();
+		// livesText.text = "Lives: " + lives.ToString();
+		uiValues.setLives(lives);
 		if(lives <= 0)
 		{
 			GameOver();

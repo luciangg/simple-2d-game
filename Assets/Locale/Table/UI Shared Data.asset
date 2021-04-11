@@ -40,7 +40,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7675477815296
-    m_Key: 'Lives:'
+    m_Key: 'Lives: {lives}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 286502405861376
+    m_Key: 'Score: {score}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6883158236655616
+    m_Key: Ranking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6898460731174912
+    m_Key: 'Language:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6898515525562368
+    m_Key: 'Name:'
     m_Metadata:
       m_Items: []
   m_Metadata:

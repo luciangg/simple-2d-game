@@ -18,9 +18,7 @@ public class ItemRespawn : MonoBehaviour
 	
 	[Header("Configuration")]
 	public Transform parent;
-	
-	
-	
+		
 	private float lastGoodRespawn;
 	private float lastBadRespawn;
 	private float lastLivesRespawn;
@@ -104,5 +102,11 @@ public class ItemRespawn : MonoBehaviour
 		}		
 	}
 	
-	
+	public void IncreaseBadRespawnTime(float toAdd)
+	{
+		if(respawnBad + toAdd >= 0.15f)
+		{
+			respawnBad += toAdd;
+		}
+	}
 }

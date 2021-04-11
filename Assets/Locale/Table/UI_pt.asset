@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: pt
   m_SharedData: {fileID: 11400000, guid: 7be6ee3cf6017864f8fb9fe6c4215620, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - id: 0
   m_TableData:
   - m_Id: 21321805824
     m_Localized: Novo Jogo
@@ -43,8 +44,30 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7675477815296
-    m_Localized: 'Vidas:'
+    m_Localized: 'Vidas: {lives}'
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 286502405861376
+    m_Localized: 'Pontos: {score}'
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 6883158236655616
+    m_Localized: Ranking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6898460731174912
+    m_Localized: 'Language:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6898515525562368
+    m_Localized: 'Name:'
     m_Metadata:
       m_Items: []
   references:
     version: 1
+    00000000:
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00f0208a9204010000f02016fb060000
