@@ -58,11 +58,27 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6898460731174912
-    m_Localized: 'Language:'
+    m_Localized: Idioma
     m_Metadata:
       m_Items: []
   - m_Id: 6898515525562368
-    m_Localized: 'Name:'
+    m_Localized: Nome
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7533615904780288
+    m_Localized: Melhor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7533707051200512
+    m_Localized: Total
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7562036840034304
+    m_Localized: Jogo Pausado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7562183389016064
+    m_Localized: Sair
     m_Metadata:
       m_Items: []
   references:

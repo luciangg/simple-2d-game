@@ -8,6 +8,7 @@ TagManager:
   - GoodItem
   - LifeItem
   - GameControl
+  - PlayFabControl
   layers:
   - Default
   - TransparentFX

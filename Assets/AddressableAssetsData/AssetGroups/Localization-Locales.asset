@@ -17,15 +17,15 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 129d76c9c27bdd94fa54d2b1b7ea3e2e
   m_SerializeEntries:
-  - m_GUID: fd944b58a5937924696449aa5879b974
-    m_Address: Portuguese (pt)
+  - m_GUID: 4ef0a6fb8d2b7a340b5c787686dce6b1
+    m_Address: English (en)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 4ef0a6fb8d2b7a340b5c787686dce6b1
-    m_Address: English (en)
+    m_MainAsset: {fileID: 11400000, guid: 4ef0a6fb8d2b7a340b5c787686dce6b1, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 4ef0a6fb8d2b7a340b5c787686dce6b1, type: 2}
+  - m_GUID: fd944b58a5937924696449aa5879b974
+    m_Address: Portuguese (pt)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale

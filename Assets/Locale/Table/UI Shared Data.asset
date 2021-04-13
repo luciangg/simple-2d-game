@@ -52,11 +52,27 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6898460731174912
-    m_Key: 'Language:'
+    m_Key: Language
     m_Metadata:
       m_Items: []
   - m_Id: 6898515525562368
-    m_Key: 'Name:'
+    m_Key: Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7533615904780288
+    m_Key: Best
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7533707051200512
+    m_Key: Total
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7562036840034304
+    m_Key: Game Paused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7562183389016064
+    m_Key: Exit
     m_Metadata:
       m_Items: []
   m_Metadata:

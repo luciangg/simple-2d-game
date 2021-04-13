@@ -6,7 +6,7 @@ using PlayFab.ClientModels;
 
 public class PlayFabLogin : MonoBehaviour
 {
-    [SerializeField] private string customID = "5FD12";
+    [SerializeField] private string customID = "64f59e32a23b4d55b4d76d63e17f05ef";
     private bool waitWebRequest;
 
     // [SerializeField] private PlayFabLog log;
@@ -23,7 +23,7 @@ public class PlayFabLogin : MonoBehaviour
         LoginWithCustomIDRequest request = new LoginWithCustomIDRequest { CustomId = customID, CreateAccount = true };
         PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnLoginFailure);
 
-        Debug.Log("Aguarde a conexão...");
+        // Debug.Log("Aguarde a conexão...");
         waitWebRequest = true;
     }
 	
@@ -36,14 +36,14 @@ public class PlayFabLogin : MonoBehaviour
 
     private void OnLoginSuccess(LoginResult result)
     {
-        Debug.Log("Conectado");
+        // Debug.Log("Conectado");
 
         waitWebRequest = false;
     }
 
     private void OnLoginFailure(PlayFabError error)
     {
-        Debug.Log("Erro na conexão");
+        // Debug.Log("Erro na conexão");
         Debug.Log(error.GenerateErrorReport());
         waitWebRequest = false;
 

@@ -7,9 +7,11 @@ public class GameOverPanel : MonoBehaviour
 {
 	public Text score;
 	public Text record;	
+	private PlayFabScore login;
 	
 	public void OpenPanel(int currentScore)
 	{
+		GetLogin().AddScore(currentScore);
 		if(PlayerPrefs.GetFloat("Record", 0) < currentScore)
 		{
 			PlayerPrefs.SetFloat("Record", currentScore);
@@ -22,5 +24,14 @@ public class GameOverPanel : MonoBehaviour
 	public void SetActive(bool active)
 	{
 		gameObject.SetActive(active);
+	}
+	
+	private PlayFabScore GetLogin()
+	{
+		if(!login)
+		{
+			login = GameObject.FindGameObjectWithTag("PlayFabControl").GetComponent<PlayFabScore>();
+		}
+		return login;
 	}
 }
