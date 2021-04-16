@@ -81,6 +81,22 @@ MonoBehaviour:
     m_Localized: Exit
     m_Metadata:
       m_Items: []
+  - m_Id: 8605039432101888
+    m_Localized: Please enter a valid name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8614924987199488
+    m_Localized: Error changing name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8614981555777536
+    m_Localized: Check connection and try again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8615195557556224
+    m_Localized: Invalid or unavailable name
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
     00000000:

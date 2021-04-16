@@ -6,24 +6,37 @@ using PlayFab.ClientModels;
 
 public class PlayFabLogin : MonoBehaviour
 {
-    [SerializeField] private string customID = "64f59e32a23b4d55b4d76d63e17f05ef";
+    [SerializeField] private string customID;
+	private string playFabId;
+	private string displayName;
     private bool waitWebRequest;
+	
+	private PlayFabAccount playFabAccount;
 
     // [SerializeField] private PlayFabLog log;
 	
     void Start()
-    {		
+    {
+		playFabAccount = gameObject.GetComponent<PlayFabAccount>();
         Login();
     }
 	
 	public void Login()
     {        
-        CreateCustomID();
+        CreateCustomID();		
+        PlayFabClientAPI.LoginWithCustomID(
+			new LoginWithCustomIDRequest { 
+				CustomId = customID,
+				CreateAccount = true,
+				InfoRequestParameters = new GetPlayerCombinedInfoRequestParams {
+					GetPlayerProfile = true
+				}
+			},
+			OnLoginSuccess,
+			OnLoginFailure
+		);
 
-        LoginWithCustomIDRequest request = new LoginWithCustomIDRequest { CustomId = customID, CreateAccount = true };
-        PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnLoginFailure);
-
-        // Debug.Log("Aguarde a conexão...");
+        Debug.Log("Conectando...");
         waitWebRequest = true;
     }
 	
@@ -36,14 +49,29 @@ public class PlayFabLogin : MonoBehaviour
 
     private void OnLoginSuccess(LoginResult result)
     {
-        // Debug.Log("Conectado");
-
-        waitWebRequest = false;
+        Debug.Log("OK");
+		playFabId = result.PlayFabId;
+		waitWebRequest = false;
+		
+		if(result.InfoResultPayload != null && result.InfoResultPayload.PlayerProfile != null)
+		{
+			displayName = result.InfoResultPayload.PlayerProfile.DisplayName;
+			PlayerPrefs.SetString("Name", displayName);
+		}
+		
+		if(playFabAccount != null)
+		{
+			playFabAccount.Initialize();
+			
+			if(string.IsNullOrEmpty(displayName))
+			{
+				playFabAccount.SetActive(true);
+			}
+		}
     }
 
     private void OnLoginFailure(PlayFabError error)
     {
-        // Debug.Log("Erro na conexão");
         Debug.Log(error.GenerateErrorReport());
         waitWebRequest = false;
 
@@ -59,4 +87,18 @@ public class PlayFabLogin : MonoBehaviour
     {
         waitWebRequest = _currentState;
     }
+	
+	public string GetPlayFabId()
+	{
+		return playFabId;
+	}
+	public string GetDisplayName()
+	{
+		return displayName;		
+	}
+	public void SetDisplayName(string name)
+	{
+		displayName = name;
+		PlayerPrefs.SetString("Name", name);
+	}
 }

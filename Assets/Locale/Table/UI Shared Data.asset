@@ -75,6 +75,22 @@ MonoBehaviour:
     m_Key: Exit
     m_Metadata:
       m_Items: []
+  - m_Id: 8605039432101888
+    m_Key: Insert Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8614924987199488
+    m_Key: Error Changing Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8614981555777536
+    m_Key: Check Connection Try Again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8615195557556224
+    m_Key: Invalid Unavailable Name
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

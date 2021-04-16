@@ -81,6 +81,22 @@ MonoBehaviour:
     m_Localized: Sair
     m_Metadata:
       m_Items: []
+  - m_Id: 8605039432101888
+    m_Localized: "Por favor, insira um nome v\xE1lido"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8614924987199488
+    m_Localized: Erro ao mudar o nome
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8614981555777536
+    m_Localized: "Verifique a conex\xE3o e tente novamente"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8615195557556224
+    m_Localized: "Nome inv\xE1lido ou n\xE3o dispon\xEDvel"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
     00000000:
